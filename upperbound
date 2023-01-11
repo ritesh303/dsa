@@ -1,0 +1,25 @@
+function upperBound(arr,key){
+    let start=0;
+    let end=arr.length-1;
+    let ans=-1;
+    while(start<=end){
+        let mid=parseInt((start+end)/2);
+        console.log(mid)
+        if(arr[mid]>key){
+            ans=mid;
+            end=mid-1;
+        }
+        else if(arr[mid]<=key){
+            ans=mid;
+            start=mid+1
+        }
+       
+    }
+    return ans;
+}
+
+arr=[1,2,3,4,6,6,6,9,10,10,11]
+let key=6;
+
+let x=upperBound(arr,key)
+console.log(`upperbound of ${key} is at index ${x}`)
